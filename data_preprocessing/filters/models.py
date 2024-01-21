@@ -99,3 +99,24 @@ class KGFlexFilter(FilterPipeline):
         super(KGFlexFilter, self).filter_engine()
         new_n_ratings = len(self._kwargs['dataset'])
         self._flag = (n_ratings - new_n_ratings) == 0
+
+class KGUFFilter(FilterPipeline):
+
+    def __init__(self, dataset, kg: pd.DataFrame, linking: pd.DataFrame, core, **kwargs):
+        print('\n-- KGUF --')
+        filters = [RemoveNoisyTriples, FilterKG, KGDatasetAlignment, DatasetKGAlignment, UserItemIterativeKCore, MapKG]
+        super(KGUFFilter, self).__init__(filters,
+                                           dataset=dataset,
+                                           kg=kg,
+                                           linking=linking,
+                                           core=core)
+
+    @property
+    def kg(self):
+        return self._kwargs['kg']
+
+    def filter_engine(self):
+        n_ratings = len(self._kwargs['dataset'])
+        super(KGUFFilter, self).filter_engine()
+        new_n_ratings = len(self._kwargs['dataset'])
+        self._flag = (n_ratings - new_n_ratings) == 0

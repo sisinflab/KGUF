@@ -1,6 +1,6 @@
 import os.path
 
-from data_preprocessing.filters.models import KGToreFilter, KaHFMFilter, KGINFilter, KGATFilter, KGFlexFilter
+from data_preprocessing.filters.models import KGToreFilter, KaHFMFilter, KGINFilter, KGATFilter, KGFlexFilter, KGUFFilter
 from data_preprocessing.filters.dataset import Binarize, Splitter
 from data_preprocessing.filters import load_kg, load_dataset, load_linking, store_dataset, store_mapped_kg
 from data_preprocessing.filters.knowledge import LinkingCleaning, KGTrainAlignment
@@ -91,6 +91,15 @@ def run(data_folder):
                                         name='kg',
                                         message='knowledge graph')
         del kgat
+
+        kguf = KGUFFilter(**kwargs)
+        kwargs['dataset'] = kguf.filter()['dataset']
+        flags.append(kguf.flag)
+        paths['kguf'] = store_mapped_kg(**kguf._kwargs,
+                                          folder=os.path.join(data_folder, 'kguf'),
+                                          name='kg',
+                                          message='knowledge graph')
+        del kguf
 
         if all(flags):
             break

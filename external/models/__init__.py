@@ -28,3 +28,4 @@ for _backend in sys.modules["external"].backend:
         from .kgtore.KGTORE import KGTORE
         from .kgcn import KGCN
         from .kgat import KGAT
+        from .kguf import KGUF
