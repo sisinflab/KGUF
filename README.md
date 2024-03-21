@@ -22,12 +22,12 @@ Graph-based Recommender with User-based Semantic Features Filtering accepted for
 
 The code in this repository allows replicating the experimental setting described within the paper.
 
-The recommenders training and evaluation procedures have been developed on the reproducibility framework **Elliot**,
+The recommender training and evaluation procedures have been developed on the reproducibility framework **Elliot**,
 so we suggest you refer to the official GitHub 
 [page](https://github.com/sisinflab/elliot) and 
 [documentation](https://elliot.readthedocs.io/en/latest/).
 
-Regarding the graph-based recommendation models based on torch, they have been implemented
+Regarding the graph-based recommendation models based on Torch, they have been implemented
 in `PyTorch Geometric` using the version `1.10.2`, with CUDA `10.2` and cuDNN `8.0`
 
 For granting the usage of the same environment on different machines, 
@@ -39,7 +39,7 @@ please look at the corresponding section in [requirements](#requirements).
 
 This software has been executed on the operative system Ubuntu `18.04`.
 
-Please, make sure to have the following installed on your system:
+Please make sure to have the following installed on your system:
 
 * Python `3.8.0` or later
 * PyTorch Geometric with PyTorch `1.10.2` or later
@@ -70,15 +70,15 @@ After the setup of your Docker containers, you may follow the exact same guideli
 ## Datasets
 
 At `./data/` you may find all the [files](data) related to 
-the datasets, the knowledge graphs and the related item-entity linking.
+the datasets, the knowledge graphs, and the related item-entity linking.
 
 The datasets could be found within the directory `./data/[DATASET]/data`. 
 Only for Movielens 1M, within the [directory](data/movielens/grouplens) `./data/movielens/grouplens`
-For the knowledge graphs and links please look at  `./data/[DATASET]/dbpedia`.
+For the knowledge graphs and links, please look at  `./data/[DATASET]/dbpedia`.
 
 ## Elliot Configuration Files
 
-At `./config_files/` you may find the Elliot [configuration files](config_files) used for setting the experiments.
+At `./config_files/`, you may find the Elliot [configuration files](config_files) used for setting the experiments.
 
 
 The configuration files for training the models are reported as `[DATASET]_[MODEL].yml`. 
@@ -100,7 +100,7 @@ The following are the parameters required by KGUF:
 
 ## Usage
 
-Here we describe the steps to reproduce the results presented in the paper. 
+Here, we describe the steps to reproduce the results presented in the paper. 
 Furthermore, we provide a description of how the experiments have been configured.
 
 ### Reproduce Paper Results
