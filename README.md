@@ -2,7 +2,7 @@
 
 This is the official implementation of the paper KGUF: Simple Knowledge-aware
 Graph-based Recommender with User-based Semantic Features Filtering accepted for presentation at IRonGraphs 2024 Workshop@ECIR 2024.
-Take a look at the [preprint version](KGUF_preprint.pdf).
+Take a look at the [preprint version](https://arxiv.org/abs/2403.20095).
 
 ## Table of Contents
 
